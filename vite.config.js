@@ -4,22 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-
-  theme:{
-    extend:{
-      colors: {
-        primary : "#2885ff",
-        secondary: "#EF863E"
-      },
-    },
-  },
   plugins: [
     react(),
-    tailwindcss()
+    tailwindcss(),
   ],
+  server: {
+    rewrites: [{ "source": "/(.*)", "destination": "/index.html" }],
+  },
 });
-
-
-{
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-}
